@@ -5,7 +5,7 @@ import FetchButton from './components/FetchButton'
 function App() {
   // Step 1: Create state variables for `joke` and `loading`
   const [jokeData, setJokeData] = useState(null)
-  const [loading, setLoading] = useState(true)
+  const [isLoading, setLoading] = useState(false)
 
 
   // Step 2: Use `useEffect` to call a function that fetches a joke when the component mounts
@@ -39,7 +39,7 @@ function App() {
       <h1>Programming Jokes</h1>
       {/* Step 4: Pass the necessary props to JokeDisplay */}
       {/* jokeData !== null && jokeData !== undefined ? jokeData.joke : undefined */}
-      <JokeDisplay joke={jokeData?.joke} loading={loading}/>
+      <JokeDisplay joke={jokeData?.joke} loading={isLoading}/>
       {/* Step 5: Pass the function to FetchButton so it can fetch a new joke on click */}
       <FetchButton fetchJoke={fetchJoke}/>
     </div>
